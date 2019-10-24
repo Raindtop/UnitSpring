@@ -1,5 +1,6 @@
 package com.raindrop.UnitSpring.Utils;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -11,14 +12,23 @@ import java.util.Date;
 public class DateUtil {
     private static SimpleDateFormat sdf;
 
-
-    public static String Formate(String format, Object... date){
+    //格式化日期的类
+    public static String format(String format, Object... date){
+        if (format == null){
+            format = "yyyy-MM-dd hh:mm:ss";
+        }
         sdf = new SimpleDateFormat(format);
         return sdf.format(date);
     }
 
-    public static String Formate(String format, String date){
+    //格式化String日期
+    public static String Paste(String strDate, String format) throws ParseException {
+        if (format == null){
+            format = "yyyy-MM-dd hh:mm:ss";
+        }
         sdf = new SimpleDateFormat(format);
-        return sdf.format(date);
+        return sdf.format(sdf.parse(strDate));
     }
+
+
 }

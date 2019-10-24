@@ -1,7 +1,7 @@
 package com.raindrop.UnitSpring.Service;
 
-import org.springframework.stereotype.Service;
+import com.raindrop.UnitSpring.Model.MysqlDemo;
 
 public interface MySQLService {
-    void test();
+    public MysqlDemo findByName(String name);
 }
