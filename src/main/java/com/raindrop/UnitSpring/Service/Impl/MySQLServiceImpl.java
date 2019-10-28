@@ -17,4 +17,19 @@ public class MySQLServiceImpl implements MySQLService {
     public MysqlDemo findByName(String name) {
         return repository.findByName(name);
     }
+
+    @Override
+    public void save(MysqlDemo mysqlDemo) {
+        repository.save(mysqlDemo);
+    }
+
+    @Override
+    public void deleteByUuid(String uuid) {
+        repository.deleteByName(uuid);
+    }
+
+    @Override
+    public void update(MysqlDemo mysqlDemo) {
+        repository.save(mysqlDemo);
+    }
 }

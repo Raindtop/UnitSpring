@@ -1,11 +1,10 @@
 package com.raindrop.UnitSpring.Model;
 
+import lombok.Builder;
 import lombok.Data;
-import org.springframework.data.annotation.Id;
+import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 
 /*
@@ -14,6 +13,7 @@ import java.io.Serializable;
  * @Date 2019/10/24
  */
 @Data
+//@Builder
 @Entity
 @Table(name = "account")
 public class MysqlDemo implements Serializable {
