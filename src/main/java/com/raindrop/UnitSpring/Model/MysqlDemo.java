@@ -3,6 +3,7 @@ package com.raindrop.UnitSpring.Model;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -16,13 +17,15 @@ import java.io.Serializable;
 //@Builder
 @Entity
 @Table(name = "account")
+@GenericGenerator(name = "jpa-uuid", strategy = "uuid")
 public class MysqlDemo implements Serializable {
     /**
      * 主键
      */
     @Id
+    @GeneratedValue(generator = "jpa-uuid")
     @Column(name = "uuid")
-    private String UUID;
+    private String uuid;
     /**
      * 姓名
      */
