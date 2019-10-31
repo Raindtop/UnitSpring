@@ -7,10 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 @RestController
 @RequestMapping("/mysql")
@@ -89,7 +86,8 @@ public class MySQLController {
 
     //for循环鱼foreach效率对比
     public static void main(String[] args) {
-        List<Integer> list = new ArrayList();
+        List<Integer> list = new LinkedList<>();
+//        List<Integer> list = new ArrayList<>();
         for (int i = 0; i < 100000; i++){
             list.add(i);
         }
