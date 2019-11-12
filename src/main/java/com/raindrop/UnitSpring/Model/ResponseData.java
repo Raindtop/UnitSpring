@@ -16,12 +16,12 @@ public class ResponseData implements Serializable {
     /**
      * 返回值
      */
-    private String SUCCESS = "TRUE";
+    private String success = "TRUE";
 
     /**
      * 返回代码
      */
-    private String CODE = "Y-10001";
+    private String code = "Y-10001";
 
     /**
      * 返回信息
@@ -49,7 +49,7 @@ public class ResponseData implements Serializable {
      * @return
      */
     public ResponseData setSuccessFalse(){
-        this.SUCCESS = "FALSE";
+        this.success = "FALSE";
         return this;
     }
 
@@ -58,7 +58,7 @@ public class ResponseData implements Serializable {
      * @return
      */
     public ResponseData setSuccessTrue(){
-        this.SUCCESS = "TRUE";
+        this.success = "TRUE";
         return this;
     }
 
@@ -68,7 +68,7 @@ public class ResponseData implements Serializable {
      * @return
      */
     public ResponseData setFalseAndMessage(String message){
-        this.SUCCESS = "FALSE";
+        this.success = "FALSE";
         this.message = message;
         return this;
     }
