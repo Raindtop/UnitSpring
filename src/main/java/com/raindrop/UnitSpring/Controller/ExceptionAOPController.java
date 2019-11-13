@@ -24,6 +24,7 @@ public class ExceptionAOPController {
         System.out.println("故事内容");
         System.out.println("故事内容");
         System.out.println("故事内容");
+        //抛出异常
         throw new Exception();
     }
 

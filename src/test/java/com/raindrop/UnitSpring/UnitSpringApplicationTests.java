@@ -1,27 +1,37 @@
 package com.raindrop.UnitSpring;
 
+import com.raindrop.UnitSpring.Controller.ExceptionAOPController;
+import com.raindrop.UnitSpring.LoggerAndException.ExceptionAno;
 import com.raindrop.UnitSpring.Model.MysqlDemo;
 import com.raindrop.UnitSpring.Service.MySQLService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
-import java.util.UUID;
-
+//此处调用Spring单元测试类
 @RunWith(SpringRunner.class)
+//下面这个类是你设定的启动类，也就是根目录下的Application.class
 @SpringBootTest(classes = UnitSpringApplication.class)
+//调用javaWEB的组件，比如自动注入ServletContext Bean等等
 @WebAppConfiguration
 public class UnitSpringApplicationTests {
 	@Autowired
 	private MySQLService sqlService;
+	@Autowired
+	private ExceptionAOPController exceptionAOPController;
 
 	@Test
+	@ExceptionAno
 	public void contextLoads() {
 		System.out.print("1111");
+	}
+
+	@Test
+	public void ExceptionTest() throws Exception {
+		exceptionAOPController.aopException();
 	}
 
 	@Test
