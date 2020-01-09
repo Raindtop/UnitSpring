@@ -4,10 +4,13 @@ import com.raindrop.UnitSpring.Controller.ExceptionAOPController;
 import com.raindrop.UnitSpring.LoggerAndException.ExceptionAno;
 import com.raindrop.UnitSpring.Model.MysqlDemo;
 import com.raindrop.UnitSpring.Service.MySQLService;
+import com.raindrop.UnitSpring.Utils.RedisUtil;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
@@ -22,6 +25,9 @@ public class UnitSpringApplicationTests {
 	private MySQLService sqlService;
 	@Autowired
 	private ExceptionAOPController exceptionAOPController;
+	@Autowired
+	private RedisUtil redisUtil;
+
 
 	@Test
 	@ExceptionAno
@@ -29,6 +35,11 @@ public class UnitSpringApplicationTests {
 		System.out.print("1111");
 	}
 
+	@Test
+	public void RedisTest(){
+		redisUtil.set("18806728288", "测试", 600);
+		System.out.print(redisUtil.get("18806728288"));
+	}
 	@Test
 	public void ExceptionTest() throws Exception {
 		exceptionAOPController.aopException();
