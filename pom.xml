@@ -12,8 +12,13 @@
     <artifactId>UnitSpring</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>UnitSpring</name>
-    <description>Demo project for Spring Boot</description>
+    <packaging>pom</packaging>
 
+    <modules>
+        <module>unit-spring-server</module>
+        <module>unit-spring-common</module>
+        <module>unit-spring-core</module>
+    </modules>
     <properties>
         <java.version>1.8</java.version>
     </properties>
@@ -78,7 +83,7 @@
             <optional>true</optional>
             <scope>true</scope>
         </dependency>
-<!--        itextPDF-->
+        <!--        itextPDF-->
         <dependency>
             <groupId>com.itextpdf</groupId>
             <artifactId>itextpdf</artifactId>
@@ -99,14 +104,40 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
 
-            <!--热部署配置-->
+
             <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.6.1</version>
                 <configuration>
-                    <!--fork:如果没有该项配置,整个devtools不会起作用-->
-                    <fork>true</fork>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <encoding>utf-8</encoding>
                 </configuration>
+                <executions>
+                    <execution>
+                        <id>default-compile</id>
+                        <phase>none</phase>
+                    </execution>
+                    <execution>
+                        <id>default-testCompile</id>
+                        <phase>none</phase>
+                    </execution>
+                    <execution>
+                        <id>java-compile</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>java-test-compile</id>
+                        <phase>test-compile</phase>
+                        <goals>
+                            <goal>testCompile</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
