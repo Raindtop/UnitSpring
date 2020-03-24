@@ -23,7 +23,6 @@ public class RedisConfig extends CachingConfigurerSupport {
         redisTemplate.setKeySerializer(new StringRedisSerializer());
         //指定Value的序列化的形式，避免出现\xac\xed\x00\x05t\x00\tb类似的值
         redisTemplate.setValueSerializer(new StringRedisSerializer());
-        System.out.println("suscessful");
         return redisTemplate;
     }
 }

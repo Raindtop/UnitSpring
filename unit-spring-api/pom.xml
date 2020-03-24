@@ -47,6 +47,11 @@
             <artifactId>unit-spring-server</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <groupId>com.raindrop</groupId>
+            <artifactId>unit-spring-security</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
     <build>

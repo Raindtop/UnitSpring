@@ -17,8 +17,10 @@
     <modules>
         <module>unit-spring-api</module>
         <module>unit-spring-server</module>
+        <module>unit-spring-security</module>
         <module>unit-spring-common</module>
         <module>unit-spring-core</module>
+        <module>unit-spring-security</module>
     </modules>
     <properties>
         <java.version>1.8</java.version>
