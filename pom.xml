@@ -15,6 +15,7 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>unit-spring-api</module>
         <module>unit-spring-server</module>
         <module>unit-spring-common</module>
         <module>unit-spring-core</module>
