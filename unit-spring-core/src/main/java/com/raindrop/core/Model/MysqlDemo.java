@@ -1,6 +1,9 @@
 package com.raindrop.core.Model;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -12,7 +15,9 @@ import java.io.Serializable;
  * @Date 2019/10/24
  */
 @Data
-//@Builder
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "account")
 @GenericGenerator(name = "jpa-uuid", strategy = "uuid")
@@ -44,4 +49,9 @@ public class MysqlDemo implements Serializable {
      */
     @Column(name = "birthday", columnDefinition = "varchar(255)")
     private String birthday;
+    /**
+     * 密码
+     */
+    @Column(name = "password", columnDefinition = "varchar(255)")
+    private String password;
 }

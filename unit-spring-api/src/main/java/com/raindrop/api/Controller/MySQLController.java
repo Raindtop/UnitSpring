@@ -5,6 +5,7 @@ import com.raindrop.core.Model.ResponseData;
 import com.raindrop.service.MySQLService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -60,7 +61,19 @@ public class MySQLController {
         return data;
     }
 
-    public static void main(String[] args) {
-        System.out.println("123123");
+    @GetMapping("hello")
+    public ResponseData hello(){
+        return new ResponseData().addData("text", "Hello");
     }
+
+    @GetMapping("name")
+    public ResponseData name(){
+        return new ResponseData().addData("text", "Joke");
+    }
+
+    @GetMapping("age")
+    public ResponseData age(){
+        return new ResponseData().addData("text", "18");
+    }
+
 }

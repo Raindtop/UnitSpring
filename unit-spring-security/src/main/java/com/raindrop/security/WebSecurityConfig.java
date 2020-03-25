@@ -1,5 +1,6 @@
 package com.raindrop.security;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
@@ -12,6 +13,9 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true, securedEnabled = true, jsr250Enabled = true)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+    @Autowired
+    private MyUserDetailService myUserDetailServicel;
+
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         System.out.println("configHttp");
@@ -21,10 +25,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         System.out.println("configAuth");
-        auth
-                .inMemoryAuthentication()
-                .withUser("root").password(new BCryptPasswordEncoder().encode("123456")).roles("mysql", "user")
-                .and()
-                .passwordEncoder(new BCryptPasswordEncoder());
+        auth.userDetailsService(myUserDetailServicel).passwordEncoder(new BCryptPasswordEncoder());
     }
 }
