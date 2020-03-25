@@ -1,0 +1,17 @@
+server:
+  port: 9098
+
+spring:
+  profiles:
+    active: server,security
+
+#日志配置
+logging:
+  file: log/api.log
+
+#Dubbo配置
+dubbo:
+  application:
+    name: unit-spring-api # 消息者名字
+  registry:
+    address: zookeeper://127.0.0.1:2181 # 注册中心地址

@@ -1,6 +1,6 @@
 package com.raindrop.core.Repository;
 
-import com.raindrop.core.Model.MysqlDemo;
+import com.raindrop.Model.MysqlDemo;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.transaction.annotation.Transactional;

@@ -1,7 +1,7 @@
 package com.raindrop.service;
 
 
-import com.raindrop.core.Model.MysqlDemo;
+import com.raindrop.Model.MysqlDemo;
 
 public interface MySQLService {
     /**

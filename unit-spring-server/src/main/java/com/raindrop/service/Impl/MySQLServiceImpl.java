@@ -1,10 +1,10 @@
 package com.raindrop.service.Impl;
 
+import com.alibaba.dubbo.config.annotation.Service;
 import com.raindrop.core.Model.MysqlDemo;
 import com.raindrop.core.Repository.MysqlDemoRepository;
 import com.raindrop.service.MySQLService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 @Service
 public class MySQLServiceImpl implements MySQLService {

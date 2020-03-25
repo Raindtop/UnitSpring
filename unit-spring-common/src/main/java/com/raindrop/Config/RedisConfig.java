@@ -1,4 +1,4 @@
-package com.raindrop.common.Config;
+package com.raindrop.Config;
 
 import org.springframework.cache.annotation.CachingConfigurerSupport;
 import org.springframework.context.annotation.Bean;

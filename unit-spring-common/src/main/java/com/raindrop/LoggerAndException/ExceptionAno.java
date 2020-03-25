@@ -1,4 +1,4 @@
-package com.raindrop.common.LoggerAndException;
+package com.raindrop.LoggerAndException;
 
 /*
  * @Description TODO AOP实现捕获异常

@@ -1,4 +1,4 @@
-package com.raindrop.common.LoggerAndException;
+package com.raindrop.LoggerAndException;
 
 import com.alibaba.fastjson.JSONObject;
 import com.raindrop.core.Model.ResponseData;
@@ -17,14 +17,14 @@ public class ExceptionAOPMain {
     /**
      * 设置切面点
      */
-    @Pointcut("@annotation(com.raindrop.common.LoggerAndException.ExceptionAno)")
+    @Pointcut("@annotation(com.raindrop.LoggerAndException.ExceptionAno)")
     public void adminRequired() {
     }
 
     /**
      * 方法执行之前
      */
-    @Before("com.raindrop.common.LoggerAndException.ExceptionAOPMain.adminRequired()")
+    @Before("com.raindrop.LoggerAndException.ExceptionAOPMain.adminRequired()")
     public void before(JoinPoint joinPoint) {
         String className = joinPoint.getTarget().getClass().getName();
         String methodName = joinPoint.getSignature().getName();
@@ -39,7 +39,7 @@ public class ExceptionAOPMain {
     /**
      * 方法执行之后
      */
-    @After("com.raindrop.common.LoggerAndException.ExceptionAOPMain.adminRequired()")
+    @After("com.raindrop.LoggerAndException.ExceptionAOPMain.adminRequired()")
     public void after(JoinPoint joinPoint) {
         System.out.println("故事结束！");
     }
@@ -47,7 +47,7 @@ public class ExceptionAOPMain {
     /**
      * 抛出异常之后
      */
-    @AfterThrowing(pointcut = "com.raindrop.common.LoggerAndException.ExceptionAOPMain.adminRequired()", throwing = "ex")
+    @AfterThrowing(pointcut = "com.raindrop.LoggerAndException.ExceptionAOPMain.adminRequired()", throwing = "ex")
     public void afterThrowing(Throwable ex) {
         System.out.println("异常：" + ex);
         ResponseData data = new ResponseData();
@@ -57,7 +57,7 @@ public class ExceptionAOPMain {
     /**
      * 正常返回之后
      */
-    @AfterReturning(pointcut = "com.raindrop.common.LoggerAndException.ExceptionAOPMain.adminRequired()", returning = "obj")
+    @AfterReturning(pointcut = "com.raindrop.LoggerAndException.ExceptionAOPMain.adminRequired()", returning = "obj")
     public void afterReturn(Object obj) {
         System.out.println("放回成功，返回值为：" + JSONObject.toJSONString(obj));
     }
@@ -65,7 +65,7 @@ public class ExceptionAOPMain {
     /**
      * 环绕通知
      */
-    @Around("com.raindrop.common.LoggerAndException.ExceptionAOPMain.adminRequired()")
+    @Around("com.raindrop.LoggerAndException.ExceptionAOPMain.adminRequired()")
     public Object around(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
 
         Object result = null;

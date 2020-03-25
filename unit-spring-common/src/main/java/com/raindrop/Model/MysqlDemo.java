@@ -1,4 +1,4 @@
-package com.raindrop.core.Model;
+package com.raindrop.Model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

@@ -1,4 +1,4 @@
-package com.raindrop.core.Model;
+package com.raindrop.Model;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;

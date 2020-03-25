@@ -1,11 +1,10 @@
 package com.raindrop.api.Controller;
 
-import com.raindrop.core.Model.MysqlDemo;
-import com.raindrop.core.Model.ResponseData;
+import com.raindrop.Model.MysqlDemo;
+import com.raindrop.Model.ResponseData;
 import com.raindrop.service.MySQLService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -1,4 +1,4 @@
-package com.raindrop.core.Model;
+package com.raindrop.Model;
 
 import com.alibaba.fastjson.JSONObject;
 import lombok.Data;

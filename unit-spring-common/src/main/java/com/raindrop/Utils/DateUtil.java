@@ -1,4 +1,4 @@
-package com.raindrop.common.Utils;
+package com.raindrop.Utils;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

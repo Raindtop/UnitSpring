@@ -1,0 +1,33 @@
+#数据库配置
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/unitspring?charset=utf8mb4&useSSL=false&serverTimezone=GMT
+    username: root
+    password: 123456
+    hikari:
+      maximum-pool-size: 20
+      minimum-idle: 5
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+
+#日志配置
+logging:
+  file: log/server.log
+
+#Dubbo配置
+dubbo:
+  application:
+    name: unit-spring-server
+  registry:
+    address: zookeeper://127.0.0.1:2181
+  protocol:
+    name: dubbo # 指定通信协议
+    port: 20880 # 通信端口  这里指的是与消费者间的通信协议与端口
+  provider:
+    timeout: 10000 # 配置全局调用服务超时时间，dubbo默认是1s，肯定不够用呀
+    retries: 3 # 重试3次
+    delay: -1
